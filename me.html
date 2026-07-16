@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profil Saya</title>
+
+<style>/* Animasi halaman */
+body{
+    animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Animasi Header */
+.header{
+    animation: zoomIn 1s ease;
+}
+
+@keyframes zoomIn{
+    from{
+        transform:scale(0.8);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+/* Tombol Sosial Media */
+.social{
+    margin-top:20px;
+}
+
+.social a{
+    display:inline-block;
+    padding:12px 24px;
+    background:#000;
+    color:#fff;
+    text-decoration:none;
+    border-radius:30px;
+    font-size:16px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.social a:hover{
+    background:#ff0050;
+    transform:translateY(-4px) scale(1.05);
+    box-shadow:0 8px 20px rgba(255,0,80,.4);
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#4facfe,#00f2fe);
+    color:#333;
+}
+
+.container{
+    max-width:900px;
+    margin:40px auto;
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.header{
+    text-align:center;
+    padding:40px 20px;
+    background:#1e88e5;
+    color:white;
+}
+
+.header img{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    border:5px solid white;
+    object-fit:cover;
+    margin-bottom:15px;
+}
+
+.header h1{
+    font-size:32px;
+}
+
+.header p{
+    margin-top:10px;
+    opacity:.9;
+}
+
+.section{
+    padding:30px;
+}
+
+.section h2{
+    color:#1e88e5;
+    margin-bottom:15px;
+}
+
+.card{
+    background:#f7f7f7;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:20px;
+}
+
+ul{
+    padding-left:20px;
+}
+
+.button{
+    display:inline-block;
+    margin-top:15px;
+    padding:12px 25px;
+    background:#1e88e5;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.button:hover{
+    background:#1565c0;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#f0f0f0;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="header">
+<img src="https://cdn.phototourl.com/free/2026-07-16-da766557-ef5b-49ea-84c6-b64aa1684b70.jpg" alt="Foto Profil">
+<h1>Muhamad Abdul Aziz</h1>
+<p>Content Creator | Digital Marketing | Tech Enthusiast</p>
+<div class="social">
+    <a href="https://www.tiktok.com/@_mhmdabdlaziz?_r=1&_t=ZS-985mcMaD7xI" target="_blank">
+        🎵 Kunjungi TikTok Saya
+    </a>
+</div>
+<a href="#tentang" class="button"></a>
+</div>
+
+<div class="section" id="tentang">
+<h2>Tentang Saya</h2>
+
+<div class="card">
+Saya adalah seseorang yang memiliki minat di bidang teknologi, digital marketing, dan content creator. Saya senang belajar hal baru serta membuat konten yang bermanfaat untuk banyak orang.
+</div>
+
+<h2>Keahlian</h2>
+
+<div class="card">
+<ul>
+<li>Digital Marketing</li>
+<li>Content Creator TikTok</li>
+<li>HTML, CSS, JavaScript Dasar</li>
+<li>Desain Thumbnail</li>
+<li>Affiliate Marketing</li>
+</ul>
+</div>
+
+<h2>Kontak</h2>
+
+<div class="card">
+<p>📧 Email : muhabdulaziz360@gmail.com</p>
+<p>📱 WhatsApp : 08232475****</p>
+<p>🎵 TikTok : @_mhmdabdlaziz</p>
+</div>
+
+</div>
+
+<footer>
+© 2026 Muhamad Abdul Aziz • Dibuat dengan menggunakan HTML & CSS
+</footer>
+
+</div>
+
+</body>
+</html>

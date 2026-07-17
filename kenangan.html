@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>❤️ Kenangan Kita ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#ff758c,#ff7eb3,#ffd1dc);
+    min-height:100vh;
+    overflow:hidden;
+}
+
+.page{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    color:white;
+    text-align:center;
+}
+
+button{
+    padding:14px 30px;
+    border:none;
+    border-radius:50px;
+    background:white;
+    color:#ff4d88;
+    font-size:18px;
+    cursor:pointer;
+    margin-top:20px;
+}
+
+#gallery{
+    display:none;
+}
+
+.slider{
+    width:90%;
+    max-width:380px;
+    height:550px;
+    border-radius:20px;
+    overflow:hidden;
+    position:relative;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+.slider img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.caption{
+    margin-top:20px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.nav{
+    margin-top:20px;
+}
+
+.nav button{
+    margin:0 10px;
+}
+
+.heart{
+    position:absolute;
+    color:white;
+    animation:love 6s linear infinite;
+}
+
+@keyframes love{
+    from{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+    20%{
+        opacity:1;
+    }
+    to{
+        transform:translateY(-120px);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+
+<div class="page" id="home">
+<h1>❤️ Kenangan Kita Sayanggg ❤️</h1>
+<p>Ayoo Liat Beberapa Kenangan Kita Lagi Sayanggg.</p>
+
+<button onclick="mulai()">
+Buka Kenangan💕
+</button>
+</div>
+
+<div class="page" id="gallery">
+
+<div class="slider" id="slider">
+
+<img id="foto" src="foto1.jpg">
+
+</div>
+
+<div class="caption" id="caption">
+Pertemuan Pertama Kita Sayanggg❤️
+</div>
+
+<div class="nav">
+<button onclick="prev()">⬅️ Sebelumnya</button>
+<button onclick="next()">Berikutnya ➡️</button>
+</div>
+
+</div>
+
+<script>
+
+const foto=[
+"https://cdn.phototourl.com/free/2026-07-16-d4e4e789-8fa3-4ca1-b9df-13887c690e95.jpg",
+"https://cdn.phototourl.com/free/2026-07-16-789aa89d-bdf8-4bdd-ade9-9ba23fb4c374.jpg",
+"https://cdn.phototourl.com/free/2026-07-16-f44981cc-2ece-49ed-a033-af194847e821.jpg",
+"https://cdn.phototourl.com/free/2026-07-16-3d8266bf-9ed1-4dec-a08a-a4bfe622fcc4.jpg",
+"https://cdn.phototourl.com/free/2026-07-16-ba7e177a-3406-4cdd-a87d-443871fef3ac.jpg",
+"https://cdn.phototourl.com/free/2026-07-16-8053e989-34de-4772-8724-bdc1e5818f36.jpg"
+];
+
+const caption=[
+"Pertemuan Pertama Kita Sayanggg❤️",
+"Ini Pertama Kali Kita Couple Gelang🌹",
+"Masih Inget Pertama Kali kita CP an Baju?😍",
+"Liattt Tonjong Jelek Bangettt😂",
+"Inii lucuuu kannnnn🥰",
+"Ini FotoBox Sebelum Ratna Berangkat ke Jakarta Lagi yaa?🥺"
+];
+
+let index=0;
+
+function tampilkan(){
+document.getElementById("foto").src=foto[index];
+document.getElementById("caption").innerHTML=caption[index];
+}
+
+function next(){
+index++;
+if(index>=foto.length) index=0;
+tampilkan();
+}
+
+function prev(){
+index--;
+if(index<0) index=foto.length-1;
+tampilkan();
+}
+
+function mulai(){
+
+document.getElementById("home").style.display="none";
+document.getElementById("gallery").style.display="flex";
+
+document.getElementById("music").play();
+
+}
+
+let startX=0;
+
+const slider=document.getElementById("slider");
+
+slider.addEventListener("touchstart",e=>{
+startX=e.touches[0].clientX;
+});
+
+slider.addEventListener("touchend",e=>{
+
+let endX=e.changedTouches[0].clientX;
+
+if(startX-endX>50){
+next();
+}
+
+if(endX-startX>50){
+prev();
+}
+
+});
+
+function heart(){
+
+const h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="❤️";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.fontSize=(15+Math.random()*25)+"px";
+
+h.style.animationDuration=(4+Math.random()*3)+"s";
+
+document.body.appendChild(h);
+
+setTimeout(()=>{
+h.remove();
+},7000);
+
+}
+
+setInterval(heart,500);
+
+</script>
+
+</body>
+</html>
